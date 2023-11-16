@@ -1,0 +1,105 @@
+// bar color mixin
+@mixin bar-color($background) {
+  .el-progress-bar {
+    .el-progress-bar__outer {
+      .el-progress-bar__inner {
+        background-color: $background;
+      }
+    }
+  }
+}
+
+// circle color mixin
+@mixin circle-color($stroke) {
+  .el-progress-circle {
+    svg {
+      path {
+        &:last-child {
+          stroke: $stroke;
+        }
+      }
+    }
+  }
+  .el-progress__text {
+    color: $stroke;
+  }
+}
+
+// progress
+.el-progress {
+  // progress line
+  &.el-progress--line {
+    .el-progress-bar {
+      .el-progress-bar__outer {
+        height: var(--comp-progress-sizing-height-line) !important;
+        background-color: var(--comp-progress-color-background);
+      }
+    }
+    .el-progress__text {
+      font: var(--comp-progress-typography-percent);
+      color: var(--comp-progress-color-text);
+    }
+  }
+
+  // text inside
+  &.el-progress--line.el-progress--text-inside {
+    .el-progress-bar {
+      .el-progress-bar__outer {
+        height: var(--comp-progress-sizing-height-internal) !important;
+        .el-progress-bar__inner {
+          .el-progress-bar__innerText {
+            font: var(--comp-progress-typography-percent);
+            color: var(--comp-progress-color-text-inverse);
+          }
+        }
+      }
+    }
+  }
+
+  // bar border radius
+  .el-progress-bar {
+    .el-progress-bar__outer {
+      border-radius: 0 var(--comp-progress-border-radius-bar-end) var(--comp-progress-border-radius-bar-end) 0;
+      .el-progress-bar__inner {
+        border-radius: 0 var(--comp-progress-border-radius-bar-end) var(--comp-progress-border-radius-bar-end) 0;
+      }
+    }
+  }
+
+  // bar color
+  @include bar-color(var(--comp-progress-color-background-bar-blue));
+  &.is-success {
+    @include bar-color(var(--comp-progress-color-background-bar-green));
+  }
+  &.is-warning {
+    @include bar-color(var(--comp-progress-color-background-bar-orange));
+  }
+  &.is-exception {
+    @include bar-color(var(--comp-progress-color-background-bar-red));
+  }
+
+  // circle
+  &.el-progress--circle {
+    .el-progress-circle {
+      svg {
+        path {
+          &:first-child {
+            stroke: var(--comp-progress-color-background);
+          }
+        }
+      }
+    }
+
+    // circle color
+    @include circle-color(var(--comp-progress-color-background-bar-blue));
+    &.is-success {
+      @include circle-color(var(--comp-progress-color-background-bar-green));
+    }
+    &.is-warning {
+      @include circle-color(var(--comp-progress-color-background-bar-orange));
+    }
+    &.is-exception {
+      @include circle-color(var(--comp-progress-color-background-bar-red));
+    }
+  }
+}

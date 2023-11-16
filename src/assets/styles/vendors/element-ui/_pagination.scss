@@ -1,0 +1,244 @@
+// pagination sizing mixin
+@mixin pagination-sizing($height, $pager-padding, $btn-padding, $btn-icon-size) {
+  // pagination number, action Button
+  .el-pager {
+    .number,
+    .more {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 $pager-padding;
+      margin: 0;
+      height: $height;
+    }
+  }
+
+  // pagination Button
+  .btn-prev,
+  .btn-next {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 $btn-padding;
+    margin: 0;
+    height: $height;
+    font-size: $btn-icon-size;
+    i, img {
+      width: $btn-icon-size;
+    }
+  }
+}
+
+// pagination setting mixin
+@mixin pagination-setting($font, $active-font, $color, $active-color, $hover-color) {
+  .btn-prev,
+  .btn-next {
+    color: $color;
+
+    // pagination Button disabled
+    &:disabled {
+      color: $color;
+      opacity: var(--comp-pagination-opacity-disabled);
+    }
+
+    // pagination Button hover
+    &:not(:disabled):hover {
+      color: $hover-color;
+    }
+  }
+
+  // pagination number, quicknext Button
+  .el-pager {
+    .number,
+    .more {
+      color: $color;
+
+      // pagination number, quicknext Button hover
+      &:not(.is-disabled):not(.is-active):hover {
+        color: $hover-color;
+      }
+
+      // pagination disabled
+      &.is-disabled {
+        opacity: var(--comp-pagination-opacity-disabled);
+      }
+    }
+
+    // pagination number
+    .number {
+      font: $font;
+      // pagination number active
+      &.is-active {
+        font: $active-font;
+        color: $active-color;
+      }
+    }
+  }
+}
+
+// pagination background setting mixin
+@mixin pagination-background-setting($font, $active-font, $color, $active-color, $hover-color, $bg, $active-bg, $border-radius) {
+  @include pagination-setting($font, $active-font, $color, $active-color, $hover-color);
+  .btn-prev,
+  .btn-next {
+    background-color: $bg;
+    border-radius: $border-radius;
+  }
+
+  // background type number, quicknext Button
+  .el-pager {
+    .number,
+    .more {
+      background-color: $bg;
+      border-radius: $border-radius;
+    }
+    .number {
+      // pagination number active
+      &.is-active,
+      &.is-active.is-disabled {
+        color: $active-color;
+        background-color: $active-bg;
+      }
+    }
+  }
+}
+
+@mixin pagination-background-gap($gap) {
+  // background type gap
+  .btn-prev {
+    margin-right: $gap;
+  }
+  .btn-next {
+    margin-left: $gap;
+  }
+  .el-pager {
+    display: inline-flex;
+    gap: $gap;
+  }
+}
+
+// pagination
+.el-pagination {
+  // pagination sizing
+  @include pagination-sizing(
+  var(--comp-pagination-sizing-basic-height),
+  var(--comp-pagination-spacing-basic-horizontal-number),
+  var(--comp-pagination-spacing-basic-horizontal-icon),
+  var(--comp-pagination-sizing-basic-icon)
+  );
+  &.el-pagination--small {
+    @include pagination-sizing(
+    var(--comp-pagination-sizing-basic-height-small),
+    var(--comp-pagination-spacing-basic-horizontal-number-small),
+    var(--comp-pagination-spacing-basic-horizontal-icon-small),
+    var(--comp-pagination-sizing-basic-icon)
+    );
+  }
+
+  // pagination setting
+  @include pagination-setting(
+  var(--comp-pagination-typography-text),
+  var(--comp-pagination-typography-text-selected),
+  var(--comp-pagination-color-basic-text),
+  var(--comp-pagination-color-basic-text-selected),
+  var(--comp-pagination-color-basic-text-hover)
+  );
+
+  // total
+  .el-pagination__total {
+    margin-right: var(--comp-pagination-spacing-more-gap);
+    font: var(--comp-pagination-typography-text);
+    color: var(--comp-pagination-color-more-text);
+  }
+  .el-pagination__sizes {
+    margin-right: var(--comp-pagination-spacing-more-gap);
+    font: var(--comp-select-typography-mini);
+    color: var(--comp-select-color-text-active);
+    .el-input--suffix {
+      margin: 0 var(--comp-pagination-spacing-more-gap) 0 0;
+    }
+  }
+  .el-pagination__jump {
+    margin-left: var(--comp-pagination-spacing-more-gap);
+    font: var(--comp-pagination-typography-text);
+    color: var(--comp-pagination-color-more-text);
+    .el-pagination__editor {
+      padding: 0;
+      margin: 0 var(--comp-pagination-spacing-more-gap);
+    }
+  }
+
+  // background type
+  &.is-background {
+    // background type sizing
+    @include pagination-sizing(
+    var(--comp-pagination-sizing-basic-height),
+    var(--comp-pagination-spacing-basic-horizontal-number),
+    var(--comp-pagination-spacing-basic-horizontal-icon),
+    var(--comp-pagination-sizing-basic-icon)
+    );
+    &.el-pagination--small {
+      @include pagination-sizing(
+      var(--comp-pagination-sizing-basic-height-small),
+      var(--comp-pagination-spacing-basic-horizontal-number-small),
+      var(--comp-pagination-spacing-basic-horizontal-icon-small),
+      var(--comp-pagination-sizing-basic-icon)
+      );
+    }
+
+    // background type gap
+    @include pagination-background-gap(var(--comp-pagination-spacing-basic-gap));
+    &.el-pagination--small {
+      @include pagination-background-gap(var(--comp-pagination-spacing-basic-gap-small));
+    }
+
+    // background type setting
+    @include pagination-background-setting(
+    var(--comp-pagination-typography-text),
+    var(--comp-pagination-typography-text-selected),
+    var(--comp-pagination-color-basic-text),
+    var(--comp-pagination-color-basic-text-inverse),
+    var(--comp-pagination-color-basic-text-hover),
+    var(--comp-pagination-color-basic-background-default),
+    var(--comp-pagination-color-basic-background-selected),
+    var(--comp-pagination-border-radius-background)
+    );
+  }
+}
+
+// pagination select
+.el-pagination {
+  .el-pagination__sizes,
+  .el-pagination__jump {
+    .el-select {
+      @include select-sizing(
+      var(--comp-select-sizing-height-medium),
+      var(--comp-select-typography-medium),
+      var(--comp-select-sizing-icon-medium)
+      );
+      &.el-select--small {
+        @include select-sizing(
+        var(--comp-select-sizing-height-mini),
+        var(--comp-select-typography-mini),
+        var(--comp-select-sizing-icon-mini)
+        );
+      }
+    }
+    .el-input {
+      @include input-sizing(
+      var(--comp-input-sizing-height-medium),
+      var(--comp-input-typography-medium),
+      var(--comp-input-sizing-icon-medium),
+      var(--comp-input-spacing-slot-button-horizontal-medium)
+      );
+      &.el-input--small {
+        @include input-sizing(
+        var(--comp-input-sizing-height-mini),
+        var(--comp-input-typography-mini),
+        var(--comp-input-sizing-icon-mini),
+        var(--comp-input-spacing-slot-button-horizontal-mini)
+        );
+      }
+    }
+  }
+}

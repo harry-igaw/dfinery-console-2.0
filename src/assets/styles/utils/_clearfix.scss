@@ -1,0 +1,10 @@
+@mixin clear-fix($pseudo: ('after')) {
+  @each $selector in $pseudo {
+    &:#{$selector} {
+      content: '';
+      display: table;
+      clear: both;
+      width: 100%;
+    }
+  }
+}

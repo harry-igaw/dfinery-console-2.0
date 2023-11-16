@@ -1,0 +1,8 @@
+.el-popover {
+  &.el-popper {
+    padding: var(--comp-popover-spacing-horizontal-container);
+    background-color: var(--comp-popover-color-background-container);
+    border-radius: var(--comp-popover-border-radius-container);
+    box-shadow: var(--comp-popover-boxshadow-default);
+  }
+}

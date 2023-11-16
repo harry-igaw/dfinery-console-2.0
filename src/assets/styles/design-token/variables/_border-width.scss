@@ -1,0 +1,32 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 16 Nov 2023 01:58:31 GMT
+ */
+
+:root {
+  --ref-border-width-4px: 4px;
+  --ref-border-width-2px: 2px;
+  --ref-border-width-1px: 1px;
+  --sys-border-width-bold: var(--ref-border-width-4px);
+  --sys-border-width-regular: var(--ref-border-width-2px);
+  --sys-border-width-thin: var(--ref-border-width-1px);
+  --ui-borderwidth-strong: var(--sys-border-width-bold);
+  --ui-borderwidth-bold: var(--sys-border-width-regular);
+  --ui-borderwidth-default: var(--sys-border-width-thin);
+  --comp-alert-borderwidth-point: var(--sys-border-width-bold);
+  --comp-upload-borderwidth-drag-file: var(--sys-border-width-thin);
+  --comp-dialog-borderwidth-default: var(--sys-border-width-thin);
+  --comp-slider-borderwidth-position-control: var(--sys-border-width-regular);
+  --comp-border-borderwidth-default: var(--sys-border-width-thin);
+  --comp-tag-borderwidth-default: var(--sys-border-width-thin);
+  --comp-cascader-borderwidth-popper-default: var(--sys-border-width-thin);
+  --comp-tab-borderwidth-line: var(--sys-border-width-regular);
+  --comp-tab-borderwidth-default: var(--sys-border-width-thin);
+  --comp-checkbox-borderwidth-dafault: var(--sys-border-width-thin);
+  --comp-radio-border-width-selected: var(--sys-border-width-bold);
+  --comp-radio-border-width-default: var(--sys-border-width-thin);
+  --comp-input-borderwidth-default: var(--sys-border-width-thin);
+  --comp-button-borderwidth-default: var(--sys-border-width-thin);
+  --comp-select-borderwitdh-default: var(--comp-input-borderwidth-default);
+  --comp-input-borderwidth-slot-default: var(--comp-input-borderwidth-default);
+}

@@ -1,0 +1,402 @@
+// default input sizing mixin
+@mixin input-sizing($height, $font, $icon-sizing, $group-padding) {
+  .el-input__wrapper {
+    height: $height;
+    .el-input__inner {
+      font: $font;
+      &::placeholder {
+        font: $font;
+      }
+    }
+
+    // prefix
+    .el-input__prefix {
+      .el-input__prefix-inner > .el-input__icon {
+        font-size: $icon-sizing;
+        width: $icon-sizing;
+      }
+    }
+    // suffix
+    .el-input__suffix {
+      .el-input__suffix-inner > .el-input__icon {
+        font-size: $icon-sizing;
+        width: $icon-sizing;
+      }
+    }
+  }
+
+  // input group sizing for Button
+  &.el-input-group {
+    .el-input-group__prepend,
+    .el-input-group__append {
+      padding: 0 $group-padding;
+      font: $font;
+    }
+  }
+}
+
+// default textarea sizing mixin
+@mixin textarea-sizing($font) {
+  .el-textarea__inner {
+    font: $font;
+    &::placeholder {
+      font: $font;
+    }
+  }
+}
+
+// input number side Button sizing
+@mixin input-number-button-sizing($width, $height, $button-width) {
+  width: $width;
+  .el-input__wrapper {
+    height: $height;
+  }
+  .el-input-number__decrease,
+  .el-input-number__increase {
+    width: $button-width;
+  }
+}
+
+// textarea
+.el-textarea {
+  // default setting
+  .el-textarea__inner {
+    color: var(--comp-input-color-text-active);
+    background-color: var(--comp-input-color-background);
+    border: var(--comp-input-border-default);
+    border-radius: var(--comp-input-border-radius-default);
+    box-shadow: none;
+    &::placeholder {
+      color: var(--comp-input-color-text-placeholder);
+    }
+
+    // focus
+    &:focus {
+      border: var(--comp-input-border-active);
+      box-shadow: none;
+    }
+  }
+
+  // hover
+  &:not(.is-disabled) {
+    .el-textarea__inner:not(:focus):hover {
+      border: var(--comp-input-border-hover);
+      box-shadow: none;
+    }
+  }
+
+  // disabled
+  &.is-disabled {
+    .el-textarea__inner {
+      opacity: var(--comp-input-opacity-disabled);
+      background-color: var(--comp-input-color-background-disabled);
+      box-shadow: none;
+    }
+  }
+
+  // count
+  .el-input__count {
+    font: var(--comp-input-typography-sub-text);
+    color: var(--comp-input-color-text-sub);
+  }
+
+  // sizing
+  @include textarea-sizing(var(--comp-input-typography-large));
+  &.el-input--medium {
+    @include textarea-sizing(var(--comp-input-typography-medium));
+  }
+  &.el-input--small {
+    @include textarea-sizing(var(--comp-input-typography-small));
+  }
+  &.el-input--mini {
+    @include textarea-sizing(var(--comp-input-typography-mini));
+  }
+}
+
+// input
+.el-input {
+  // default padding
+  .el-input__wrapper {
+    padding: 0 var(--comp-input-spacing-horizontal);
+
+    // prefix margin
+    .el-input__prefix {
+      .el-input__prefix-inner > .el-input__icon {
+        margin-right: var(--comp-input-spacing-prefixicon-right);
+      }
+    }
+    // suffix margin
+    .el-input__suffix {
+      .el-input__suffix-inner > .el-input__icon {
+        margin-left: var(--comp-input-spacing-prefixicon-right);
+      }
+    }
+
+    // count
+    .el-input__count {
+      .el-input__count-inner {
+        font: var(--comp-input-typography-sub-text);
+        color: var(--comp-input-color-text-sub);
+      }
+    }
+  }
+
+  // default setting
+  .el-input__wrapper {
+    background-color: var(--comp-input-color-background);
+    border: var(--comp-input-border-default);
+    border-radius: var(--comp-input-border-radius-default);
+    box-shadow: none;
+    .el-input__inner {
+      color: var(--comp-input-color-text-active);
+      &::placeholder {
+        color: var(--comp-input-color-text-placeholder);
+      }
+    }
+  }
+
+  // hover
+  &:not(.is-disabled) {
+    .el-input__wrapper:not(.is-focus):hover {
+      border: var(--comp-input-border-hover);
+      box-shadow: none;
+    }
+  }
+
+  // focus
+  .el-input__wrapper.is-focus {
+    border: var(--comp-input-border-active);
+    box-shadow: none;
+  }
+
+  // disabled
+  &.is-disabled {
+    .el-input__wrapper {
+      opacity: var(--comp-input-opacity-disabled);
+      background-color: var(--comp-input-color-background-disabled);
+      border: var(--comp-input-border-default);
+      box-shadow: none;
+    }
+  }
+
+  // sizing
+  @include input-sizing(
+  var(--comp-input-sizing-height-large),
+  var(--comp-input-typography-large),
+  var(--comp-input-sizing-icon-large),
+  var(--comp-input-spacing-slot-button-horizontal-large)
+  );
+  &.el-input--medium {
+    @include input-sizing(
+    var(--comp-input-sizing-height-medium),
+    var(--comp-input-typography-medium),
+    var(--comp-input-sizing-icon-medium),
+    var(--comp-input-spacing-slot-button-horizontal-medium)
+    );
+  }
+  &.el-input--small {
+    @include input-sizing(
+    var(--comp-input-sizing-height-small),
+    var(--comp-input-typography-small),
+    var(--comp-input-sizing-icon-small),
+    var(--comp-input-spacing-slot-button-horizontal-small)
+    );
+  }
+  &.el-input--mini {
+    @include input-sizing(
+    var(--comp-input-sizing-height-mini),
+    var(--comp-input-typography-mini),
+    var(--comp-input-sizing-icon-mini),
+    var(--comp-input-spacing-slot-button-horizontal-mini)
+    );
+  }
+
+  // input group border radius
+  &.el-input-group {
+    // prepend, append border radius
+    &.el-input-group--prepend {
+      .el-input__wrapper {
+        border-radius: 0 var(--comp-input-border-radius-default) var(--comp-input-border-radius-default) 0;
+      }
+      .el-input-group__prepend {
+        border-radius: var(--comp-input-border-radius-default) 0 0 var(--comp-input-border-radius-default);
+        .el-button {
+          border-radius: var(--comp-input-border-radius-default) 0 0 var(--comp-input-border-radius-default);
+        }
+      }
+    }
+    &.el-input-group--append {
+      .el-input__wrapper {
+        border-radius: var(--comp-input-border-radius-default) 0 0 var(--comp-input-border-radius-default);
+      }
+      .el-input-group__append {
+        border-radius: 0 var(--comp-input-border-radius-default) var(--comp-input-border-radius-default) 0;
+        .el-button {
+          border-radius: 0 var(--comp-input-border-radius-default) var(--comp-input-border-radius-default) 0;
+        }
+      }
+    }
+    &.el-input-group--prepend.el-input-group--append {
+      .el-input__wrapper {
+        border-radius: 0;
+      }
+    }
+  }
+
+  // input group Button
+  &.el-input-group {
+    .el-input-group__prepend,
+    .el-input-group__append {
+      padding: 0 var(--comp-input-spacing-slot-plaintext-horizontal);
+      color: var(--comp-input-color-slot-button-text);
+      background-color: var(--comp-input-color-slot-plaintext-background);
+      //box-shadow: none;
+      .el-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        &:not(:active):not(:focus),
+        &:not(:active):focus:hover {
+          border: var(--comp-select-border-default);
+        }
+      }
+    }
+  }
+
+  // input group select
+  &.el-input-group.input-with-select {
+    &.el-input-group--prepend,
+    &.el-input-group--append {
+      .el-input-group__prepend,
+      .el-input-group__append {
+        .el-select {
+          $input-select-margin-side: calc(var(--comp-input-spacing-slot-plaintext-horizontal) * -1);
+          margin-left: $input-select-margin-side;
+          margin-right: $input-select-margin-side;
+          background-color: var(--comp-input-color-background);
+          .el-input {
+            .el-input__wrapper {
+              box-shadow: none !important;
+              &.is-focus {
+                border: var(--comp-select-border-selected);
+                box-shadow: none;
+              }
+            }
+
+            &.is-focus {
+              .el-input__wrapper,
+              .el-input__wrapper.is-focus {
+                border: var(--comp-select-border-selected);
+              }
+            }
+          }
+        }
+      }
+      .el-input-group__prepend {
+        .el-select {
+          .el-input__wrapper {
+            border: var(--comp-select-border-default);
+            border-radius: var(--comp-input-border-radius-default) 0 0 var(--comp-input-border-radius-default);
+          }
+        }
+      }
+      .el-input-group__append {
+        .el-select {
+          .el-input__wrapper {
+            border: var(--comp-select-border-default);
+            border-radius: 0 var(--comp-input-border-radius-default) var(--comp-input-border-radius-default) 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// input number
+.el-input-number {
+  // input number disabled, hover, active
+  &:not(.is-disabled) {
+    .el-input-number__decrease,
+    .el-input-number__increase {
+      color: var(--comp-input-color-slot-button-icon);
+      background-color: var(--comp-input-color-slot-button-background);
+      &:not(.is-disabled):hover {
+        color: var(--comp-input-color-slot-button-icon-active);
+      }
+      &:hover + .el-input {
+        .el-input__wrapper:not(.is-focus) {
+          border: var(--comp-input-border-hover);
+        }
+      }
+      &:hover~.el-input:not(.is-disabled) {
+        .el-input__wrapper {
+          box-shadow: none;
+        }
+      }
+      &.is-disabled {
+        .el-icon {
+          opacity: var(--comp-input-opacity-disabled);
+        }
+      }
+    }
+  }
+
+  // controls Button position
+  &.is-controls-right,
+  &.is-controls-left {
+    .el-input-number__increase {
+      height: 50%;
+    }
+    .el-input-number__decrease {
+      height: 50%;
+    }
+  }
+
+  // Button sizing
+  @include input-number-button-sizing(
+  var(--comp-input-sizing-number-width-large),
+  var(--comp-input-sizing-height-large),
+  var(--comp-input-sizing-slot-button-height-large)
+  );
+  &.el-input--medium {
+    @include input-number-button-sizing(
+    var(--comp-input-sizing-number-width-medium),
+    var(--comp-input-sizing-height-medium),
+    var(--comp-input-sizing-slot-button-height-medium)
+    );
+  }
+  &.el-input--small {
+    @include input-number-button-sizing(
+    var(--comp-input-sizing-number-width-small),
+    var(--comp-input-sizing-height-small),
+    var(--comp-input-sizing-slot-button-height-small)
+    );
+  }
+  &.el-input--mini {
+    @include input-number-button-sizing(
+    var(--comp-input-sizing-number-width-mini),
+    var(--comp-input-sizing-height-mini),
+    var(--comp-input-sizing-slot-button-height-mini)
+    );
+  }
+}
+
+// dropdown
+.el-picker-panel,
+.el-date-picker {
+  @include layer-index('popover');
+
+  .el-date-editor & {
+    @include layer-index('inline-popover');
+  }
+}
+
+.el-color-dropdown {
+  @include layer-index('popover');
+
+  .el-color & {
+    @include layer-index('inline-popover');
+  }
+}

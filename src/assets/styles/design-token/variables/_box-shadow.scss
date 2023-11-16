@@ -1,0 +1,21 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 16 Nov 2023 01:58:31 GMT
+ */
+
+:root {
+  --ref-boxshadow-3: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+  --ref-boxshadow-2: 0px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  --ref-boxshadow-1: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  --ref-boxshadow-0: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+  --ui-boxshadow-higher: var(--ref-boxshadow-3);
+  --ui-boxshadow-high: var(--ref-boxshadow-2);
+  --ui-boxshadow-low: var(--ref-boxshadow-1);
+  --comp-scroll-item-opacity-list: var(--ref-boxshadow-2);
+  --comp-popover-boxshadow-default: var(--ref-boxshadow-3);
+  --comp-cascader-boxshadow-popper: var(--ref-boxshadow-2);
+  --sys-boxshadow-level3: var(--ref-boxshadow-3);
+  --sys-boxshadow-level2: var(--ref-boxshadow-2);
+  --sys-boxshadow-level1: var(--ref-boxshadow-1);
+  --sys-boxshadow-level0: var(--ref-boxshadow-0);
+}

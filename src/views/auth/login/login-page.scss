@@ -1,0 +1,22 @@
+.login-page {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  padding: 137px 102px;
+  border-radius: 16px;
+  border: 1px solid #DEE2E6;
+  background: #FFFFFF;
+}
+
+.login-page__logo-image {
+  margin-bottom: 40px;
+  align-self: center;
+}
+
+.login-page__login-button {
+  margin-top: 20px;
+}

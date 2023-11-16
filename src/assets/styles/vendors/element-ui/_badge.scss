@@ -1,0 +1,48 @@
+.el-badge {
+  .el-badge__content {
+    padding: 0 var(--comp-badge-spacing-horizontal);
+    height: var(--comp-badge-sizing-medium);
+    font: var(--comp-badge-typography-text);
+    border: none;
+    border-radius: var(--comp-badge-border-radius-rounded);
+
+    // dot
+    &.is-dot {
+      padding: 0;
+      width: var(--comp-badge-sizing-dot);
+      height: var(--comp-badge-sizing-dot);
+    }
+
+    // fixed
+    //&.is-fixed {
+    //  right: 10px;
+    //}
+    //&.is-fixed.is-dot {
+    //  right: 6px;
+    //}
+
+    // badge color
+    &.el-badge__content--primary {
+      background-color: var(--comp-badge-color-primary);
+    }
+    &.el-badge__content--success {
+      background-color: var(--comp-badge-color-green);
+    }
+    &.el-badge__content--info {
+      background-color: var(--comp-badge-color-mute);
+    }
+    &.el-badge__content--warning {
+      background-color: var(--comp-badge-color-yellow);
+    }
+    &, &.el-badge__content--error {
+      background-color: var(--comp-badge-color-red);
+    }
+  }
+
+  // custom class
+  &.el-badge--flash {
+    .el-badge__content {
+      animation: var(--custom-comp-badge-flash-ease-2);
+    }
+  }
+}

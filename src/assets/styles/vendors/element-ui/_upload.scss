@@ -1,0 +1,118 @@
+.el-upload {
+  // dragger
+  .el-upload-dragger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    width: var(--comp-upload-sizing-card-drag-file-width);
+    height: var(--comp-upload-sizing-card-drag-file-height);
+    border: var(--comp-upload-border-drag-file);
+    border-radius: var(--comp-upload-border-radius-drag-file);
+
+    // dragger hover
+    &:hover {
+      border: var(--comp-upload-border-drag-file-hover);
+    }
+    .el-upload__text {
+      font: var(--comp-upload-typography-drag-file-text);
+      color: var(--comp-upload-color-drag-file-text);
+    }
+    .el-icon {
+      margin: 0;
+    }
+
+    // custom class
+    // v-show를 위해 감싸는 패턴을 위함
+    .upload-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--comp-upload-spacing-gap-drag-file-contents);
+    }
+    .upload-img {
+      width: auto;
+      height: var(--comp-upload-sizing-card-drag-file-icon);
+      margin: 0;
+    }
+    .upload-icon {
+      font-size: var(--comp-upload-sizing-card-drag-file-icon);
+    }
+  }
+
+  // focus border
+  &:focus {
+    .el-upload-dragger {
+      border: var(--comp-upload-border-drag-file-hover);
+    }
+  }
+}
+
+// upload tip
+.el-upload__tip {
+  margin-top: var(--comp-upload-spacing-gap-file);
+  font: var(--comp-upload-typography-file-subtext);
+  color: var(--comp-upload-color-file-subtext);
+}
+
+// upload list
+.el-upload-list {
+  .el-upload-list__item {
+    .el-upload-list__item-info {
+      .el-upload-list__item-name {
+        // prefix icon
+        .el-icon {
+          color: var(--comp-upload-color-list-icon);
+
+        }
+        // file name
+        .el-upload-list__item-file-name {
+          color: var(--comp-upload-color-list-text);
+        }
+      }
+
+      // upload progress
+      .el-progress {
+        .el-progress-bar {
+          .el-progress-bar__outer {
+            height: var(--comp-upload-sizing-height-progress-bar) !important;
+            background-color: transparent;
+          }
+        }
+        .el-progress__text {
+          top: -22px;
+          color: var(--comp-upload-color-list-text);
+        }
+      }
+    }
+
+    // success icon
+    .el-upload-list__item-status-label {
+      .el-icon--upload-success {
+        width: var(--comp-upload-sizing-file-list-icon);
+        font-size: var(--comp-upload-sizing-file-list-icon);
+        color: var(--comp-upload-color-list-icon-success);
+      }
+    }
+  }
+}
+
+// custom class avatar upload
+.avatar-uploader {
+  .el-upload {
+    width: var(--comp-upload-sizing-card-click-file-box);
+    height: var(--comp-upload-sizing-card-click-file-box);
+    border: var(--comp-upload-border-drag-file);
+    border-radius: var(--comp-upload-border-radius-drag-file);
+    &:hover, &:focus {
+      border: var(--comp-upload-border-drag-file-hover);
+      .el-icon {
+        color: var(--comp-upload-color-drag-file-icon);
+      }
+    }
+    .el-icon {
+      font-size: var(--comp-upload-sizing-card-drag-file-icon);
+      color: var(--comp-upload-color-drag-file-icon);
+    }
+  }
+}

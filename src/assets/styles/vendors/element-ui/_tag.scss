@@ -1,0 +1,157 @@
+// tag sizing mixin
+@mixin tag-sizing($padding, $height, $font) {
+  padding: 0 $padding;
+  height: $height;
+  font: $font;
+}
+
+// tag color mixin
+@mixin tag-color($color, $bg, $border) {
+  color: $color;
+  background-color: $bg;
+  border: $border;
+  .el-tag__close {
+    color: $color;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.el-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--comp-tag-spacing-gap);
+  border-radius: var(--comp-tag-border-radius-default);
+
+  // close icon position
+  .el-tag__close {
+    position: unset;
+    margin: 0;
+    &::before {
+      // element ui에서 사용중인 icon이 작아서, 임의로 사이즈 추가
+      font-size: calc(var(--comp-tag-sizing-icon-close) + 4px);
+    }
+  }
+
+  //tag sizing
+  &, &.el-tag--large {
+    @include tag-sizing(
+    var(--comp-tag-spacing-horizontal-large),
+    var(--comp-tag-sizing-height-large),
+    var(--comp-tag-typography-text-large)
+    );
+  }
+  &.el-tag--medium {
+    @include tag-sizing(
+    var(--comp-tag-spacing-horizontal-medium),
+    var(--comp-tag-sizing-height-medium),
+    var(--comp-tag-typography-text-medium)
+    );
+  }
+  &.el-tag--small {
+    @include tag-sizing(
+    var(--comp-tag-spacing-horizontal-small),
+    var(--comp-tag-sizing-height-small),
+    var(--comp-tag-typography-text-small)
+    );
+  }
+  &.el-tag--mini {
+    @include tag-sizing(
+    var(--comp-tag-spacing-horizontal-mini),
+    var(--comp-tag-sizing-height-mini),
+    var(--comp-tag-typography-text-mini)
+    );
+  }
+
+  // tag light color
+  &, &.el-tag--primary,
+  &.el-tag--primary.el-tag--light,
+  &.el-tag--light {
+    @include tag-color(
+    var(--comp-tag-color-tint-text-blue),
+    var(--comp-tag-color-tint-background-blue),
+    var(--comp-tag-border-blue-tint)
+    );
+  }
+  &.el-tag--success,
+  &.el-tag--success.el-tag--light {
+    @include tag-color(
+    var(--comp-tag-color-tint-text-green),
+    var(--comp-tag-color-tint-background-green),
+    var(--comp-tag-border-green-tint)
+    );
+  }
+  &.el-tag--info,
+  &.el-tag--info.el-tag--light {
+    @include tag-color(
+    var(--comp-tag-color-tint-text-grey),
+    var(--comp-tag-color-tint-background-grey),
+    var(--comp-tag-border-grey-tint)
+    );
+  }
+  &.el-tag--warning,
+  &.el-tag--warning.el-tag--light {
+    @include tag-color(
+    var(--comp-tag-color-tint-text-orange),
+    var(--comp-tag-color-tint-background-orange),
+    var(--comp-tag-border-orange-tint)
+    );
+  }
+  &.el-tag--danger,
+  &.el-tag--danger.el-tag--light {
+    @include tag-color(
+    var(--comp-tag-color-tint-text-red),
+    var(--comp-tag-color-tint-background-red),
+    var(--comp-tag-border-red-tint)
+    );
+  }
+
+  // tag dark color
+  &.el-tag--dark,
+  &.el-tag--primary.el-tag--dark {
+    @include tag-color(
+    var(--comp-tag-color-contained-text-blue),
+    var(--comp-tag-color-contained-background-blue),
+    var(--comp-tag-border-blue-contained)
+    );
+  }
+  &.el-tag--success.el-tag--dark {
+    @include tag-color(
+    var(--comp-tag-color-contained-text-green),
+    var(--comp-tag-color-contained-background-green),
+    var(--comp-tag-border-green-contained)
+    );
+  }
+  &.el-tag--info.el-tag--dark {
+    @include tag-color(
+    var(--comp-tag-color-contained-text-grey),
+    var(--comp-tag-color-contained-background-grey),
+    var(--comp-tag-border-grey-contained)
+    );
+  }
+  &.el-tag--warning.el-tag--dark {
+    @include tag-color(
+    var(--comp-tag-color-contained-text-orange),
+    var(--comp-tag-color-contained-background-orange),
+    var(--comp-tag-border-orange-contained)
+    );
+  }
+  &.el-tag--danger.el-tag--dark {
+    @include tag-color(
+    var(--comp-tag-color-contained-text-red),
+    var(--comp-tag-color-contained-background-red),
+    var(--comp-tag-border-red-contained)
+    );
+  }
+
+
+  // tag plain
+  &.el-tag--plain {
+    @include tag-color(
+    var(--comp-tag-color-plain-text),
+    var(--comp-tag-color-plain-background),
+    var(--comp-tag-border-plain)
+    );
+  }
+}

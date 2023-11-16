@@ -1,0 +1,61 @@
+// message box
+.el-message-box {
+  padding: 0;
+
+  // header, body, footer padding
+  .el-message-box__header,
+  .el-message-box__body,
+  .el-message-box__btns {
+    padding: var(--comp-dialog-spacing-vertical) var(--comp-dialog-spacing-horizontal);
+  }
+
+  // header
+  .el-message-box__header {
+    font: var(--comp-dialog-typography-title);
+    color: var(--comp-dialog-color-text-base);
+    background-color: var(--comp-dialog-color-background-default);
+    .el-message-box__title {
+      font: var(--comp-dialog-typography-title);
+      color: var(--comp-dialog-color-text-base);
+    }
+    .el-message-box__headerbtn {
+      top: var(--comp-dialog-spacing-vertical);
+      right: var(--comp-dialog-spacing-horizontal);
+      width: var(--comp-dialog-sizing-title-icon-close);
+      .el-message-box__close {
+        font-size: var(--comp-dialog-sizing-title-icon-close);
+        color: var(--comp-dialog-color-text-base);
+      }
+    }
+  }
+
+  // footer Button gap
+  .el-message-box__btns {
+    .el-button + .el-button {
+      margin-left: var(--comp-dialog-spacing-gap);
+    }
+    // message box footer button small
+    .el-button {
+      @include button-sizing(
+      var(--comp-button-spacing-horizontal-small),
+      var(--comp-button-sizing-small),
+      var(--comp-button-typography-small),
+      var(--comp-button-sizing-icon-small)
+      );
+    }
+  }
+
+  // footer center
+  &.el-message-box--center {
+    .el-message-box__header {
+      padding-top: calc(var(--comp-dialog-spacing-centered-content-button-bottom) + var(--comp-dialog-spacing-vertical));
+    }
+    .el-message-box__btns {
+      padding-bottom: calc(var(--comp-dialog-spacing-centered-content-button-bottom) + var(--comp-dialog-spacing-vertical));
+    }
+  }
+}
+
+.el-message-box__wrapper {
+  @include layer-index('toast', 10);
+}

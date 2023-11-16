@@ -1,0 +1,15 @@
+.el-popper {
+  &.is-dark {
+    padding: var(--comp-tooltip-spacing-tip);
+    font: var(--comp-tooltip-typography-text);
+    background-color: var(--comp-tooltip-color-background-tip);
+    border: none;
+    border-radius: var(--comp-tooltip-border-radius-tip);
+    .el-popper__arrow {
+      &::before {
+        background-color: var(--comp-tooltip-color-background-tip);
+        border-color: var(--comp-tooltip-color-background-tip);
+      }
+    }
+  }
+}

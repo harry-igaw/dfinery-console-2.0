@@ -1,0 +1,329 @@
+// default and round size mixin
+@mixin button-sizing($padding, $height, $font, $image) {
+  padding: 0 $padding;
+  height: $height;
+  &, * {
+    font: $font;
+  }
+  img {
+    height: $image;
+  }
+}
+
+// square and circle size mixin
+@mixin button-custom-sizing($sizing, $font, $image) {
+  padding: 0;
+  width: $sizing;
+  height: $sizing;
+  &, * {
+    font: $font;
+  }
+  img {
+    height: $image;
+  }
+}
+
+// button color mixin
+@mixin button-color($color, $bg, $hover-bg, $pressed-bg, $border, $hover-border, $pressed-border) {
+  color: $color;
+  background-color: $bg;
+  border: $border;
+
+  &.is-disabled:hover {
+    color: $color;
+    background-color: $bg;
+    border: $border;
+  }
+  &:not(.is-disabled):hover,
+  &:not(.is-disabled):focus {
+    color: $color;
+    background-color: $hover-bg;
+    border: $hover-border;
+    &:active {
+      color: $color;
+      background-color: $pressed-bg;
+      border: $pressed-border;
+    }
+  }
+}
+
+// link button color mixin
+@mixin link-button-color($color, $hover-color, $pressed-color) {
+  color: $color;
+  &:hover {
+    color: $hover-color;
+  }
+  &:active {
+    color: $pressed-color;
+  }
+}
+
+.el-button {
+  // default
+  transition: var(--custom-comp-button-transition-ease-2);
+  border-radius: var(--comp-button-border-radius-default);
+
+  // custom calss
+  // full
+  &.is-full {
+    width: var(--comp-button-sizing-width-100per);
+  }
+
+  // default and round size
+  @include button-sizing(
+  var(--comp-button-spacing-horizontal-large),
+  var(--comp-button-sizing-large),
+  var(--comp-button-typography-large),
+  var(--comp-button-sizing-icon-large)
+  );
+  &.is-round {
+    padding: 0 var(--comp-button-spacing-horizontal-large);
+    border-radius: var(--comp-button-border-radius-rounded);
+  }
+  &.el-button--medium,
+  &.el-button--medium.is-round {
+    @include button-sizing(
+    var(--comp-button-spacing-horizontal-medium),
+    var(--comp-button-sizing-medium),
+    var(--comp-button-typography-medium),
+    var(--comp-button-sizing-icon-medium)
+    );
+  }
+  &.el-button--small,
+  &.el-button--small.is-round {
+    @include button-sizing(
+    var(--comp-button-spacing-horizontal-small),
+    var(--comp-button-sizing-small),
+    var(--comp-button-typography-small),
+    var(--comp-button-sizing-icon-small)
+    );
+  }
+  &.el-button--mini,
+  &.el-button--mini.is-round{
+    @include button-sizing(
+    var(--comp-button-spacing-horizontal-mini),
+    var(--comp-button-sizing-mini),
+    var(--comp-button-typography-mini),
+    var(--comp-button-sizing-icon-mini)
+    );
+  }
+
+  // square and circle size
+  &.is-circle {
+    border-radius: var(--comp-button-border-radius-circle);
+  }
+  &.is-circle,
+  &.is-square {
+    @include button-custom-sizing(
+    var(--comp-button-sizing-large),
+    var(--comp-button-typography-large),
+    var(--comp-button-sizing-icon-large)
+    );
+  }
+  &.el-button--medium.is-circle,
+  &.el-button--medium.is-square {
+    @include button-custom-sizing(
+    var(--comp-button-sizing-medium),
+    var(--comp-button-typography-medium),
+    var(--comp-button-sizing-icon-medium)
+    );
+  }
+  &.el-button--small.is-circle,
+  &.el-button--small.is-square {
+    @include button-custom-sizing(
+    var(--comp-button-sizing-small),
+    var(--comp-button-typography-small),
+    var(--comp-button-sizing-icon-small)
+    );
+  }
+  &.el-button--mini.is-circle,
+  &.el-button--mini.is-square {
+    @include button-custom-sizing(
+    var(--comp-button-sizing-mini),
+    var(--comp-button-typography-mini),
+    var(--comp-button-sizing-icon-mini)
+    );
+  }
+
+  //  Button color
+  &:not(.is-link) {
+    @include button-color(
+    var(--comp-button-color-text-base),
+    var(--comp-button-color-background-base),
+    var(--comp-button-color-background-base-hover),
+    var(--comp-button-color-background-base-pressed),
+    var(--comp-button-border-plain-default),
+    var(--comp-button-border-plain-hover),
+    var(--comp-button-border-plain-pressed)
+    );
+    &.el-button--primary {
+      @include button-color(
+      var(--comp-button-color-text-inverse),
+      var(--comp-button-color-background-primary),
+      var(--comp-button-color-background-primary-hover),
+      var(--comp-button-color-background-primary-pressed),
+      var(--comp-button-border-container-primary),
+      var(--comp-button-border-container-primary-hover),
+      var(--comp-button-border-container-primary-pressed)
+      );
+    }
+    &.el-button--success {
+      @include button-color(
+      var(--comp-button-color-text-inverse),
+      var(--comp-button-color-background-success),
+      var(--comp-button-color-background-success-hover),
+      var(--comp-button-color-background-success-pressed),
+      var(--comp-button-border-container-success),
+      var(--comp-button-border-container-success-hover),
+      var(--comp-button-border-container-success-pressed)
+      );
+    }
+    &.el-button--info {
+      @include button-color(
+      var(--comp-button-color-text-inverse),
+      var(--comp-button-color-background-secondary),
+      var(--comp-button-color-background-secondary-hover),
+      var(--comp-button-color-background-secondary-pressed),
+      var(--comp-button-border-container-secondary),
+      var(--comp-button-border-container-secondary-hover),
+      var(--comp-button-border-container-secondary-pressed)
+      );
+    }
+    &.el-button--warning {
+      @include button-color(
+      var(--comp-button-color-text-inverse),
+      var(--comp-button-color-background-warning),
+      var(--comp-button-color-background-warning-hover),
+      var(--comp-button-color-background-warning-pressed),
+      var(--comp-button-border-container-warning),
+      var(--comp-button-border-container-warning-hover),
+      var(--comp-button-border-container-warning-pressed)
+      );
+    }
+    &.el-button--danger {
+      @include button-color(
+      var(--comp-button-color-text-inverse),
+      var(--comp-button-color-background-error),
+      var(--comp-button-color-background-error-hover),
+      var(--comp-button-color-background-error-pressed),
+      var(--comp-button-border-container-error),
+      var(--comp-button-border-container-error-hover),
+      var(--comp-button-border-container-error-pressed)
+      );
+    }
+  }
+
+  // link button color
+  &.is-link {
+    padding: var(--comp-button-spacing-none);
+    &.el-button--primary {
+      @include link-button-color(
+      var(--comp-button-color-text-primary),
+      var(--comp-button-color-text-primary-hover),
+      var(--comp-button-color-text-primary-pressed)
+      );
+    }
+    &.el-button--success {
+      @include link-button-color(
+      var(--comp-button-color-text-success),
+      var(--comp-button-color-text-success-hover),
+      var(--comp-button-color-text-success-pressed)
+      );
+    }
+    &, &.el-button--info {
+      @include link-button-color(
+      var(--comp-button-color-text-secondary),
+      var(--comp-button-color-text-secondary-hover),
+      var(--comp-button-color-text-secondary-pressed)
+      );
+    }
+    &.el-button--warning {
+      @include link-button-color(
+      var(--comp-button-color-text-warning),
+      var(--comp-button-color-text-warning-hover),
+      var(--comp-button-color-text-warning-pressed)
+      );
+    }
+    &.el-button--danger {
+      @include link-button-color(
+      var(--comp-button-color-text-error),
+      var(--comp-button-color-text-error-hover),
+      var(--comp-button-color-text-error-pressed)
+      );
+    }
+  }
+
+  // plain color
+  &.is-plain,
+  &.is-plain.is-disabled {
+    @include button-color(
+    var(--comp-button-color-text-base),
+    var(--comp-button-color-background-base),
+    var(--comp-button-color-background-base-hover),
+    var(--comp-button-color-background-base-pressed),
+    var(--comp-button-border-plain-default),
+    var(--comp-button-border-plain-hover),
+    var(--comp-button-border-plain-pressed)
+    );
+    &.el-button--primary {
+      @include button-color(
+      var(--comp-button-color-text-primary),
+      var(--comp-button-color-background-primary-outlined),
+      var(--comp-button-color-background-primary-outlined-hover),
+      var(--comp-button-color-background-primary-outlined-pressed),
+      var(--comp-button-border-tint-primary),
+      var(--comp-button-border-tint-primary-hover),
+      var(--comp-button-border-tint-primary-pressed)
+      );
+    }
+    &.el-button--success {
+      @include button-color(
+      var(--comp-button-color-text-success),
+      var(--comp-button-color-background-success-outlined),
+      var(--comp-button-color-background-success-outlined-hover),
+      var(--comp-button-color-background-success-outlined-pressed),
+      var(--comp-button-border-tint-success),
+      var(--comp-button-border-tint-success-hover),
+      var(--comp-button-border-tint-success-pressed)
+      );
+    }
+    &.el-button--info {
+      @include button-color(
+      var(--comp-button-color-text-secondary),
+      var(--comp-button-color-background-secondary-outlined),
+      var(--comp-button-color-background-secondary-outlined-hover),
+      var(--comp-button-color-background-secondary-outlined-pressed),
+      var(--comp-button-border-tint-secondary),
+      var(--comp-button-border-tint-secondary-hover),
+      var(--comp-button-border-tint-secondary-pressed)
+      );
+    }
+    &.el-button--warning {
+      @include button-color(
+      var(--comp-button-color-text-warning),
+      var(--comp-button-color-background-warning-outlined),
+      var(--comp-button-color-background-warning-outlined-hover),
+      var(--comp-button-color-background-warning-light-pressed),
+      var(--comp-button-border-tint-warning),
+      var(--comp-button-border-tint-warning-hover),
+      var(--comp-button-border-tint-warning-pressed)
+      );
+    }
+    &.el-button--danger {
+      @include button-color(
+      var(--comp-button-color-text-error),
+      var(--comp-button-color-background-error-light),
+      var(--comp-button-color-background-error-light-hover),
+      var(--comp-button-color-background-error-light-pressed),
+      var(--comp-button-border-tint-error),
+      var(--comp-button-border-tint-error-hover),
+      var(--comp-button-border-tint-error-pressed)
+      );
+    }
+  }
+
+  // disabled
+  &.is-disabled {
+    opacity: var(--comp-button-opacity-disabled);
+  }
+}

@@ -1,0 +1,54 @@
+@import "@assets/styles/index.scss";
+
+$grid-guide-column-bg-color: #F6C4D9;
+$grid-guide-gutter-bg-color: #B3F7FD;
+$grid-guide-margin-bg-color: #ACF4D4;
+
+$grid-guide-margin: 16px;
+
+.grid-guide {
+  position: absolute;
+  width: 1240px - ($grid-guide-margin * 2);
+  margin: 0 $grid-guide-margin;
+  left: 50%;
+  top: 0;
+  transform: translateX(calc(-50% - #{$grid-guide-margin}));
+  height: 100vh;
+
+  &::before, &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 16px;
+    height: 100%;
+    background-color: rgba($grid-guide-margin-bg-color, 0.4);
+  }
+
+  &::before {
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  &::after {
+    right: 0;
+    transform: translateX(100%);
+  }
+}
+
+.grid-guide__col {
+  position: relative;
+  background-color: rgba($grid-guide-column-bg-color, 0.4);
+
+  &:not(:last-child) {
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      right: 0;
+      transform: translateX(100%);
+      width: 16px;
+      height: 100%;
+      background-color: rgba($grid-guide-gutter-bg-color, 0.4);
+    }
+  }
+}

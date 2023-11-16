@@ -1,0 +1,255 @@
+// select sizing mixin
+@mixin select-sizing($height, $font, $suffix-size) {
+  .el-input {
+    .el-input__wrapper {
+      height: auto;
+      min-height: $height;
+      .el-input__inner {
+        // mini size가 정상적으로 출력될 수 있도록 추가
+        // -> @todo el-input group의 select가 깨짐. 추후 해결.
+        //height: $height;
+        font: $font;
+        &::placeholder {
+          font: $font;
+        }
+      }
+    }
+
+    &.el-input--suffix {
+      .el-input__suffix {
+        .el-input__suffix-inner {
+          i {
+            font-size: $suffix-size;
+            &::before {
+              font-size: $suffix-size;
+              width: $suffix-size;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// element ui 내부적으로 el-input 사용
+// input.scss 파일 참고
+.el-select {
+  // hover, focus box shadow delete
+  &:hover, &.is-focus {
+    .el-input {
+      .el-input__wrapper {
+        box-shadow: none;
+      }
+    }
+  }
+
+  // suffix
+  .el-input.el-input--suffix {
+    &.is-focus {
+      .el-input__wrapper {
+        .el-input__suffix {
+          .el-input__suffix-inner {
+            color: var(--comp-select-color-icon-active);
+          }
+        }
+      }
+    }
+    .el-input__wrapper {
+      .el-input__suffix {
+        .el-input__suffix-inner {
+          color: var(--comp-select-color-icon-helper);
+          .el-icon {
+            margin-left: var(--comp-select-spacing-gap);
+          }
+        }
+      }
+    }
+  }
+
+  .el-input {
+    // default
+    .el-input__wrapper {
+      padding: 0 var(--comp-select-spacing-horizontal);
+      //border: var(--comp-select-border-default);
+      //border-radius: var(--comp-select-border-radius-default);
+      //&::placeholder {
+      //  color: var(--comp-select-color-text-placeholder);
+      //}
+    }
+
+    // focus
+    &.is-focus {
+      .el-input__wrapper {
+        border: var(--comp-select-border-selected);
+        box-shadow: none !important;
+      }
+    }
+    .el-input__wrapper.is-focus {
+      box-shadow: none !important;
+    }
+  }
+
+  // selest sizing
+  &, &.el-select--large {
+    @include select-sizing(
+    var(--comp-select-sizing-height-large),
+    var(--comp-select-typography-large),
+    var(--comp-select-sizing-icon-large)
+    );
+  }
+  &.el-select--medium {
+    @include select-sizing(
+    var(--comp-select-sizing-height-medium),
+    var(--comp-select-typography-medium),
+    var(--comp-select-sizing-icon-medium)
+    );
+  }
+  &.el-select--small {
+    @include select-sizing(
+    var(--comp-select-sizing-height-small),
+    var(--comp-select-typography-small),
+    var(--comp-select-sizing-icon-small)
+    );
+  }
+  &.el-select--mini {
+    @include select-sizing(
+    var(--comp-select-sizing-height-mini),
+    var(--comp-select-typography-mini),
+    var(--comp-select-sizing-icon-mini)
+    );
+  }
+
+  // select tag
+  .el-select__tags {
+    .el-select-tags-wrapper {
+      margin-left: var(--comp-select-spacing-horizontal);
+      .el-tag {
+        //margin: 0;
+        .el-tag__content {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+  // select tag sizing(tag mixin 이용)
+  // select 크기에 상관 없이 tag small로 바인딩 되는 문제점 해결
+  &, &.el-select--large {
+    .el-select__tags {
+      .el-tag {
+        @include tag-sizing(
+        var(--comp-tag-spacing-horizontal-large),
+        var(--comp-tag-sizing-height-large),
+        var(--comp-tag-typography-text-large)
+        );
+      }
+    }
+  }
+  &.el-select--medium {
+    .el-select__tags {
+      .el-tag {
+        @include tag-sizing(
+        var(--comp-tag-spacing-horizontal-medium),
+        var(--comp-tag-sizing-height-medium),
+        var(--comp-tag-typography-text-medium)
+        );
+      }
+    }
+  }
+  &.el-select--small {
+    .el-select__tags {
+      .el-tag {
+        @include tag-sizing(
+        var(--comp-tag-spacing-horizontal-small),
+        var(--comp-tag-sizing-height-small),
+        var(--comp-tag-typography-text-small)
+        );
+      }
+    }
+  }
+  &.el-select--mini {
+    .el-select__tags {
+      .el-tag {
+        @include tag-sizing(
+        var(--comp-tag-spacing-horizontal-mini),
+        var(--comp-tag-sizing-height-mini),
+        var(--comp-tag-typography-text-mini)
+        );
+      }
+    }
+  }
+}
+
+// select dropdown
+.el-select__popper.el-popper{
+  background-color: var(--comp-scroll-item-color-background);
+  border: none;
+  border-radius: var(--comp-scroll-item-border-radius-default);
+  box-shadow: var(--comp-scroll-item-opacity-list);
+
+  .el-select-dropdown {
+    $padding-right-with-check-icon: calc(var(--comp-scroll-item-spacing-item-horizontal) + var(--comp-scroll-item-sizing-item-icon) + var(--comp-scroll-item-spacing-item-gap));
+    .el-scrollbar {
+      .el-select-dropdown__wrap {
+        .el-select-dropdown__list {
+          padding: var(--comp-scroll-item-spacing-vertical) 0;
+          .el-select-dropdown__item {
+            display: flex;
+            align-items: center;
+            padding: var(--comp-scroll-item-spacing-item-vertical) $padding-right-with-check-icon var(--comp-scroll-item-spacing-item-vertical) var(--comp-scroll-item-spacing-item-horizontal);
+            font: var(--comp-scroll-item-typography-item-text);
+            color: var(--comp-scroll-item-color-item-text);
+            background-color: var(--comp-scroll-item-color-item-background);
+
+            // dropdown item check ui
+            &::after {
+              right: var(--comp-scroll-item-spacing-item-horizontal);
+              font-size: var(--comp-scroll-item-sizing-item-icon);
+            }
+
+            // dropdown item selected
+            &.selected {
+              span {
+                font: var(--comp-scroll-item-typography-item-text-selected);
+                color: var(--comp-scroll-item-color-item-text-selected);
+              }
+            }
+            // dropdown item hover
+            &:not(.is-disabled):hover {
+              background-color: var(--comp-scroll-item-color-item-background-hover);
+            }
+
+            // dropdown item disabled
+            &.is-disabled {
+              opacity: var(--comp-scroll-item-opacity-item-disabled);
+            }
+          }
+
+          // dropdown group
+          .el-select-group__wrap {
+            &::after {
+              left: var(--comp-scroll-item-spacing-item-horizontal);
+              right: var(--comp-scroll-item-spacing-item-horizontal);
+              background-color: var(--comp-border-color-divider);
+            }
+            .el-select-group__title {
+              padding: var(--comp-scroll-item-spacing-item-vertical) var(--comp-scroll-item-spacing-item-horizontal);
+              font: var(--comp-scroll-item-typography-item-title);
+              color: var(--comp-scroll-item-color-item-text-title);
+              background-color: var(--comp-scroll-item-color-item-background);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// dropdown
+.el-select-dropdown {
+  @include layer-index('popover');
+
+  .el-select & {
+    @include layer-index('inline-popover');
+  }
+}

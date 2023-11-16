@@ -1,0 +1,50 @@
+$grid-column-count: 12;
+$grid-gap: 16px;
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: $grid-gap;
+  margin: 0 16px;
+
+  &.align-item-start {
+    align-items: self-start;
+  }
+
+  &.align-item-center {
+    align-items: center;
+  }
+
+  &.align-item-end {
+    align-items: self-end;
+  }
+
+  @for $i from 1 through 12 {
+    .col-start-#{$i} {
+      grid-column-start: $i;
+    }
+
+    .col-#{$i} {
+      grid-column-end: span $i;
+    }
+    //.col-offset-#{$i} {
+    //  margin-left: 100%;
+    //}
+  }
+
+  [class^="col-"] {
+    &.align-self-start {
+      align-self: self-start;
+    }
+
+    &.align-self-center {
+      align-self: center;
+    }
+
+    &.align-self-end {
+      align-self: self-end;
+    }
+  }
+}
+
+

@@ -1,0 +1,26 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 16 Nov 2023 01:58:31 GMT
+ */
+
+:root {
+  --ref-opacity-50: 50%;
+  --ref-opacity-30: 30%;
+  --ref-opacity-10: 10%;
+  --sys-opacity-30per: var(--ref-opacity-30);
+  --sys-opacity-10per: var(--ref-opacity-10);
+  --sys-opacity-50per: var(--ref-opacity-50);
+  --comp-pagination-opacity-disabled: var(--sys-opacity-30per);
+  --comp-carousel-opacity-arrow: var(--sys-opacity-10per);
+  --comp-carousel-opacity-indicator-outside: var(--sys-opacity-30per);
+  --comp-carousel-opacity-indicator-default: var(--sys-opacity-50per);
+  --comp-scroll-item-opacity-item-disabled: var(--sys-opacity-50per);
+  --comp-dropdown-opacity-button-disabled: var(--sys-opacity-50per);
+  --comp-cascader-opacity-list-disabled: var(--sys-opacity-50per);
+  --comp-checkbox-opacity-disabled: var(--sys-opacity-50per);
+  --comp-radio-opacity-disabled: var(--sys-opacity-50per);
+  --comp-switch-opacity-disabled: var(--sys-opacity-50per);
+  --comp-input-opacity-disabled: var(--sys-opacity-50per);
+  --comp-button-opacity-disabled: var(--sys-opacity-50per);
+  --comp-select-opacity-disabled: var(--comp-input-opacity-disabled);
+}

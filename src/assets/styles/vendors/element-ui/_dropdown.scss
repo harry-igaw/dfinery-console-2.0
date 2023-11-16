@@ -1,0 +1,78 @@
+// dropdown
+.el-dropdown {
+  // focus-visible outline delete
+  &, .el-dropdown-link,
+  .el-button-group .el-button {
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .el-button-group {
+    // split button middle line
+    .el-button {
+      margin: 0;
+      &, &.is-disabled {
+        &::before {
+          opacity: 1;
+          top: 20%;
+          bottom: 20%;
+          background-color: var(--comp-dropdown-color-button-divider);
+        }
+      }
+      &, &:hover {
+        &:first-child {
+          border-right: none;
+        }
+        &:last-child {
+          border-left: none;
+        }
+      }
+    }
+  }
+}
+
+// dropdown popper
+.el-popper {
+  &.is-light {
+    background-color: var(--comp-scroll-item-color-background);
+    border: none;
+    box-shadow: var(--comp-scroll-item-opacity-list);
+
+    .el-scrollbar {
+      .el-scrollbar__wrap {
+        .el-scrollbar__view.el-dropdown__list {
+          // dropdown menu
+          .el-dropdown-menu {
+            padding: var(--comp-scroll-item-spacing-vertical) 0;
+            border-radius: var(--comp-scroll-item-border-radius-default);
+
+            // dropdown item
+            .el-dropdown-menu__item {
+              padding: var(--comp-scroll-item-spacing-item-vertical) var(--comp-scroll-item-spacing-item-horizontal);
+              background-color: var(--comp-scroll-item-color-item-background);
+
+              &.is--active {
+                color: var(--comp-scroll-item-color-item-text-selected);
+              }
+
+              &.is-disabled {
+                opacity: var(--comp-scroll-item-opacity-item-disabled);
+                cursor: not-allowed;
+              }
+
+              // dropdown item hover
+              &:hover {
+                background-color: var(--comp-scroll-item-color-item-background-hover);
+              }
+
+              // dropdown item font
+              font: var(--comp-scroll-item-typography-item-text);
+              color: var(--comp-scroll-item-color-item-text);
+            }
+          }
+        }
+      }
+    }
+  }
+}

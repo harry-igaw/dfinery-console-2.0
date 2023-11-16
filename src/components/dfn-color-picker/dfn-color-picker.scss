@@ -1,0 +1,55 @@
+@import "@assets/styles/index.scss";
+
+.dfn-color-picker {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 26px;
+  padding: 0;
+  border: unset;
+  background-color: unset;
+  cursor: pointer;
+
+  &.is-disabled {
+    cursor: not-allowed;
+  }
+
+  .dfn-color-picker__button-icon {
+    font-size: 20px;
+    margin-bottom: -2px;
+  }
+
+  .dfn-color-picker__current-color-wrapper {
+    width: 100%;
+    height: 8px;
+    padding: 1px;
+    border: 1px solid $--color-achromatic5;
+    .dfn-color-picker__current-color {
+      height: 100%;
+    }
+  }
+}
+
+.dfn-color-picker-popper {
+  //@include layer-index('popover');
+}
+
+.dfn-color-picker-popper__container {
+  //padding: 5px;
+  border-radius: 6px;
+}
+
+.dfn-color-picker-popper__button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  & > button {
+    flex: 1;
+    height: 32px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 100%;
+  }
+}

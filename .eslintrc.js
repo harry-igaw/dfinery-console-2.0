@@ -4,10 +4,10 @@ module.exports = {
     node: true,
   },
   extends: [
-    "plugin:vue/vue3-essential",
     "eslint:recommended",
     "@vue/typescript/recommended",
     "plugin:prettier/recommended",
+    "plugin:vue/vue3-recommended",
   ],
   parserOptions: {
     ecmaVersion: 2020,
@@ -15,6 +15,18 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "prettier/prettier": [
+      "error",
+      {
+        bracketSameLine: true,
+        endOfLine: "auto",
+        // trailingComma: "all",
+        // htmlWhitespaceSensitivity: "ignore",
+        vueIndentScriptAndStyle: true,
+        // singleAttributePerLine: true,
+        // printWidth: 150,
+      },
+    ],
   },
   overrides: [
     {

@@ -1,0 +1,37 @@
+.el-switch {
+  width: var(--comp-switch-sizing-width);
+  height: var(--comp-switch-sizing-height);
+  .el-switch__core {
+    width: var(--comp-switch-sizing-width);
+    height: var(--comp-switch-sizing-height);
+    background-color: var(--comp-switch-color-background-off);
+    border: none;
+    border-radius: var(--comp-switch-border-radius-background);
+
+    // inner circle
+    .el-switch__action {
+      top: var(--comp-switch-spacing-padding);
+      left: var(--comp-switch-spacing-padding);
+      width: var(--comp-switch-sizing-toggle);
+      height: var(--comp-switch-sizing-toggle);
+    }
+  }
+
+  // checked
+  &.is-checked {
+    $switch-circle--checked-position: calc(100% - 22px);
+    .el-switch__core {
+      background-color: var(--comp-switch-color-background-on);
+      border: none;
+      .el-switch__action {
+        left: $switch-circle--checked-position;
+      }
+    }
+  }
+
+  // disabled
+  &.is-disabled {
+    opacity: var(--comp-switch-opacity-disabled);
+  }
+}
+

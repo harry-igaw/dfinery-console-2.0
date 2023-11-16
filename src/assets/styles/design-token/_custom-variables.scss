@@ -1,0 +1,13 @@
+// css
+:root {
+  --custom-ref-transition-background-color-ease-2: background-color .2s ease;
+  --custom-ref-transition-color-ease-2: color .2s ease;
+  --custom-ref-transition-border-color-ease-2: border-color .2s ease;
+  --custom-ref-transition-box-shadow-ease-2: box-shadow .2s ease;
+  --custom-ref-animation-flash-ease-2: flash 2s infinite ease-in-out;
+  --custom-ref-animation-flash-ease-3: flash 3s infinite ease-in-out;
+  --custom-sys-transition-color-ease-2: var(--custom-ref-transition-color-ease-2), var(--custom-ref-transition-background-color-ease-2), var(--custom-ref-transition-border-color-ease-2), var(--custom-ref-transition-box-shadow-ease-2);
+  --custom-sys-animation-flash-ease-2: var(--custom-ref-animation-flash-ease-2);
+  --custom-comp-button-transition-ease-2: var(--custom-sys-transition-color-ease-2);
+  --custom-comp-badge-flash-ease-2: var(--custom-sys-animation-flash-ease-2);
+}

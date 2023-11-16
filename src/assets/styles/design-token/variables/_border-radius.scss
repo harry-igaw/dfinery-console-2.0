@@ -1,0 +1,53 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 16 Nov 2023 01:58:31 GMT
+ */
+
+:root {
+  --ref-border-radius-100per: 100%;
+  --ref-border-radius-100px: 100px;
+  --ref-border-radius-2px: 2px;
+  --ref-border-radius-16px: 16px;
+  --ref-border-radius-8px: 8px;
+  --ref-border-radius-4px: 4px;
+  --ref-border-radius-0px: 0px;
+  --sys-border-radius-circle: var(--ref-border-radius-100per);
+  --sys-border-radius-level-1: var(--ref-border-radius-2px);
+  --sys-border-radius-level-4: var(--ref-border-radius-16px);
+  --sys-border-radius-level-3: var(--ref-border-radius-8px);
+  --sys-border-radius-level-2: var(--ref-border-radius-4px);
+  --sys-border-radius-none: var(--ref-border-radius-0px);
+  --sys-border-radius-rounded: var(--ref-border-radius-100px);
+  --ui-border-radius-large: var(--sys-border-radius-level-4);
+  --ui-border-radius-medium: var(--sys-border-radius-level-3);
+  --ui-border-radius-small: var(--sys-border-radius-level-2);
+  --comp-upload-border-radius-drag-file: var(--sys-border-radius-level-2);
+  --comp-progress-border-radius-bar-end: var(--sys-border-radius-rounded);
+  --comp-pagination-border-radius-background: var(--sys-border-radius-level-2);
+  --comp-popover-border-radius-container: var(--sys-border-radius-level-2);
+  --comp-tooltip-border-radius-tip: var(--sys-border-radius-level-2);
+  --comp-switch-border-radius-background: var(--sys-border-radius-rounded);
+  --comp-slider-border-radius-default: var(--sys-border-radius-rounded);
+  --comp-scroll-item-border-radius-default: var(--sys-border-radius-level-2);
+  --comp-tag-border-radius-default: var(--sys-border-radius-level-2);
+  --comp-dialog-border-radius-default: var(--sys-border-radius-level-2);
+  --comp-toast-border-radius-default: var(--sys-border-radius-level-3);
+  --comp-cascader-border-radius-popper-default: var(--sys-border-radius-level-2);
+  --comp-alert-border-radius-default: var(--sys-border-radius-level-2);
+  --comp-badge-border-radius-rounded: var(--sys-border-radius-rounded);
+  --comp-tab-border-radius-none: var(--sys-border-radius-none);
+  --comp-checkbox-border-radius-button: var(--sys-border-radius-level-2);
+  --comp-checkbox-border-radius-default: var(--sys-border-radius-level-1);
+  --comp-radio-border-radius-tab: var(--sys-border-radius-level-2);
+  --comp-radio-border-radius-button: var(--sys-border-radius-level-2);
+  --comp-radio-border-radius-circle: var(--sys-border-radius-circle);
+  --comp-input-border-radius-slot-none: var(--sys-border-radius-none);
+  --comp-input-border-radius-none: var(--sys-border-radius-none);
+  --comp-input-border-radius-default: var(--sys-border-radius-level-2);
+  --comp-button-border-radius-circle: var(--sys-border-radius-circle);
+  --comp-button-border-radius-rounded: var(--sys-border-radius-rounded);
+  --comp-button-border-radius-default: var(--sys-border-radius-level-2);
+  --comp-dropdown-border-radius-default-button: var(--comp-button-border-radius-default);
+  --comp-select-border-radius-group-none: var(--comp-input-border-radius-none);
+  --comp-select-border-radius-default: var(--comp-input-border-radius-default);
+}

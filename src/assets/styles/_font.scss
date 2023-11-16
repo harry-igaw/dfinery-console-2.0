@@ -1,0 +1,117 @@
+/* pretendard-100 */
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 100;
+  src: url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Thin.otf') format('opentype');
+  src: local(''),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Thin.woff2') format('woff2'), /* Super Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Thin.woff') format('woff'), /* Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Thin.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Thin.subset.woff2') format('woff2'),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Thin.subset.woff') format('woff');
+}
+/* pretendard-200 */
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 200;
+  src: url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-ExtraLight.otf') format('opentype');
+  src: local(''),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-ExtraLight.woff2') format('woff2'), /* Super Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-ExtraLight.woff') format('woff'), /* Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-ExtraLight.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-ExtraLight.subset.woff2') format('woff2'),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-ExtraLight.subset.woff') format('woff');
+}
+/* pretendard-300 */
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 300;
+  src: url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Light.otf') format('opentype');
+  src: local(''),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Light.woff2') format('woff2'), /* Super Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Light.woff') format('woff'), /* Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Light.subset.woff2') format('woff2'),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Light.subset.woff') format('woff');
+}
+/* pretendard-400 */
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Regular.otf') format('opentype');
+  src: local(''),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Regular.woff') format('woff'), /* Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Regular.subset.woff2') format('woff2'),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Regular.subset.woff') format('woff');
+}
+/* pretendard-500 */
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Medium.otf') format('opentype');
+  src: local(''),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Medium.woff') format('woff'), /* Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Medium.subset.woff2') format('woff2'),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Medium.subset.woff') format('woff');
+}
+/* pretendard-600 */
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  src: url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-SemiBold.otf') format('opentype');
+  src: local(''),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-SemiBold.woff2') format('woff2'), /* Super Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-SemiBold.woff') format('woff'), /* Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-SemiBold.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-SemiBold.subset.woff2') format('woff2'),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-SemiBold.subset.woff') format('woff');
+}
+/* pretendard-700 */
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Bold.otf') format('opentype');
+  src: local(''),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Bold.woff') format('woff'), /* Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Bold.subset.woff2') format('woff2'),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Bold.subset.woff') format('woff');
+}
+/* pretendard-800 */
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 800;
+  src: url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-ExtraBold.otf') format('opentype');
+  src: local(''),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-ExtraBold.woff2') format('woff2'), /* Super Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-ExtraBold.woff') format('woff'), /* Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-ExtraBold.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-ExtraBold.subset.woff2') format('woff2'),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-ExtraBold.subset.woff') format('woff');
+}
+/* pretendard-900 */
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 900;
+  src: url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Black.otf') format('opentype');
+  src: local(''),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Black.woff2') format('woff2'), /* Super Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Black.woff') format('woff'), /* Modern Browsers */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Black.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Black.subset.woff2') format('woff2'),
+  url('https://s3.ap-northeast-1.amazonaws.com/static.adbrix.io/front/fonts/pretendard/Pretendard-Black.subset.woff') format('woff');
+}

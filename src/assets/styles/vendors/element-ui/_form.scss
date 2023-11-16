@@ -1,0 +1,25 @@
+// valid error
+.el-form-item {
+  &.is-error {
+    // input
+    .el-input {
+      .el-input__wrapper {
+        border: var(--comp-input-border-error);
+      }
+    }
+
+    // textarea
+    .el-textarea {
+      .el-textarea__inner {
+        border: var(--comp-input-border-error);
+      }
+    }
+
+    .el-select-v2 {
+      .el-select-v2__wrapper {
+        border: var(--comp-select-border-error);
+        box-shadow: none;
+      }
+    }
+  }
+}
